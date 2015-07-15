@@ -13,7 +13,7 @@ ENV AEROSPIKE_SHA256 df810e67d363291f6f40c046564bbc7ab775fcdb45ebfb8783683617050
 RUN \
   apt-get update -y \
   && apt-get install -y wget logrotate ca-certificates \
-  && apt-get install -y s3cmd libcurl3 libxml2
+  && apt-get install -y s3cmd libcurl3 libxml2 \
   && wget "https://www.aerospike.com/artifacts/aerospike-server-community/${AEROSPIKE_VERSION}/aerospike-server-community-${AEROSPIKE_VERSION}-debian7.tgz" -O aerospike-server.tgz \
   && echo "$AEROSPIKE_SHA256 *aerospike-server.tgz" | sha256sum -c - \
   && mkdir aerospike \
